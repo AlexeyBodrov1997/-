@@ -20,7 +20,7 @@ def print_board(board):
 
 
 def place_ships(bot_board):
-    ship_sizes = [1, 1, 3, 2, 2, 1]  # размеры кораблей
+    ship_sizes = [1, 1, 3, 2, 2, 1, 1]  # размеры кораблей
     for size in ship_sizes:
         placed = False
         while not placed:
@@ -65,15 +65,7 @@ while True:
  try:
     print("Your turn!")
     guess_x = int(input("Guess X (0-5): "))
-    if guess_x > 5:
-        raise IndexError ("Ошибка. Вне пределов игрового поля")
- except IndexError:
-    print("Ошибка. Вне пределов игрового поля")
     guess_y = int(input("Guess Y (0-5): "))
-    if guess_y > 5:
-        raise IndexError("Ошибка. Вне пределов игрового поля")
- except IndexError:
-     print("Ошибка. Вне пределов игрового поля")
  except ValueError as e:
     print("Ошибка. Вы ввели буквы")
  else:
@@ -91,3 +83,4 @@ while True:
         # бот делает выстрел
     print("Bot's turn!")
     guess_x = random.randint
+    guess_y = random.randint
